@@ -1,0 +1,54 @@
+/* Основной контейнер терминала */
+.terminal {
+  text-align: center;
+  color: #00ff00;
+  font-family: 'JetBrains Mono', monospace; /* Применяем JetBrains Mono */
+  position: relative;
+  height: 100vh; /* Занимает всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрируем текст по вертикали */
+  align-items: center; /* Центрируем текст по горизонтали */
+  text-shadow:
+  0 0 5px #00ff00,
+  0 0 10px #00ff00;
+  animation: glow 1s infinite alternate;
+}
+
+/* Контейнер для границ и заполняющейся строки */
+.loading-boundary {
+  width: 400px; /* Фиксированная ширина */
+  height: 20px; /* Высота строки */
+  background-color: #222; /* Цвет фона границ */
+  border: 2px solid #00ff00; /* Границы строки */
+  border-radius: 10px; /* Скругление углов */
+  position: relative; /* Для позиционирования дочерних элементов */
+  margin-top: 20px; /* Отступ от текста */
+  overflow: visible; /* Проценты будут видимыми */
+}
+
+/* Заполняющаяся строка */
+.loading-bar {
+  height: 100%; /* Занимает всю высоту контейнера */
+  background: linear-gradient(90deg, #00ff00, #00ffff); /* Цвет заполнения */
+  border-radius: 8px; /* Скругление углов */
+  transition: width 0.3s ease-in-out; /* Плавное увеличение ширины */
+  position: absolute; /* Позиционируем внутри контейнера */
+  left: 0; /* Начинается слева */
+  top: 0;
+}
+
+/* Проценты */
+.loading-counter {
+  font-size: 18px;
+  color: #00ff00;
+  position: absolute; /* Позиционируем абсолютно */
+  left: calc(100% + 10px); /* Фиксируем справа за пределами границ */
+  top: 50%;
+  transform: translateY(-50%); /* Центрируем по вертикали */
+  transition: left 0.3s ease-in-out; /* Плавное перемещение */
+  white-space: nowrap; /* Текст не переносится */
+  text-shadow:
+    0 0 5px #00ff00,
+    0 0 10px #00ff00;
+}

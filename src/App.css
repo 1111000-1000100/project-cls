@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* Основные стили */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'JetBrains Mono', monospace; /* Применяем JetBrains Mono */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  text-shadow:
+    0 0 5px #00ff00,
+    0 0 10px #00ff00;
+  animation: glow 1s infinite alternate;
+}
+
+.app {
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Контент поверх фона */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+  text-align: center;
+  opacity: 0; /* Начальное состояние для анимации */
+  animation: fadeIn 1s ease-in-out forwards; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Аватарка */
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Ссылки на соцсети */
+.socials .links a {
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.neon-button {
+  color: #00ff00;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: linear-gradient(135deg, #00ff00, #00ffff);
+  color: #000;
+  box-shadow:
+    0 0 5px #00ff00,
+    0 0 10px #3edd9b,
+    0 0 10px #00ffff;
+}
+
+/* Discord-серверы*/
+.discord {
+  margin-bottom: 20px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.discord h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.discord ul li a{
+  list-style: none;
+  text-decoration: none;
+  color: #00ff00;
+  padding: 10px;
+}
+
+.neon-link {
+  color: #00ff00;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.neon-link:hover {
+  color: #000;
+  text-shadow:
+    0 0 5px #00ff00,
+    0 0 10px #3edd9b;
+}
+
+/* Надпись "Добро пожаловать" */
+.welcome-text {
+  font-size: 32px;
+  color: #00ff00;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out forwards; /* Плавное появление */
+}
